@@ -54,6 +54,7 @@ const Salida = () => {
         </div>
       ) : (
         <div className={styles.imageContainer}>
+          <p className={styles.titleIMG}>Quitar sus artículos</p>
           <Image
             src="/Box-Transparent-PNG.png"
             alt="Box"
@@ -61,7 +62,7 @@ const Salida = () => {
             width={500}
             height={500}
           />
-          <p className={styles.titleIMG}>Quitar sus artículos</p>
+          
         </div>
       )}
     </div>

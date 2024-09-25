@@ -98,6 +98,15 @@ const Bienes = () => {
     }
   };
 
+  const deleteArticle = (id) => {
+    if (window.confirm(`Estas seguro de eliminar el articulo ${id}?`)) {
+      const newData = data.filter(item => item.id !== id);
+      setData(newData);
+      localStorage.setItem("db", JSON.stringify(newData));
+    }
+  };
+   
+
   return (
     <div className={`${styles.main} ${styles.fondo}`}>
       <nav className={styles.nav}>
@@ -137,6 +146,7 @@ const Bienes = () => {
                   <div className={styles.stockControls}>
                     <button onClick={() => incrementStock(item.id)}>+</button>
                     <button onClick={() => decrementStock(item.id)}>-</button>
+                    <button onClick={() => deleteArticle(item.id)} className='{styles.deleteButton}'>X</button> {/* Botón para eliminar */}
                   </div>
                 </div>
               ))}
